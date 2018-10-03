@@ -1,5 +1,27 @@
 # jumpcloud interview take-home exercise (in Go)
 
+# Instructions
+
+Clone the repo:
+git clone https://github.com/scruffycatherder/jumpcloud
+
+Build and start the server:
+go build
+./jumpcloud --port=<port>
+
+Request a new hashed password
+curl —data “password=<password>” http://<hostname>:<port>/hash
+(Returns the new hash_key)
+
+Check for a completed hash:
+curl —data “password=<password>” http://<hostname>:<port>/hash/<hash_key>
+
+Request execution statistics:
+curl —data “password=<password>” http://<hostname>:<port>/stats/
+
+
+# Requirements (copied from provided doc for convenience)
+
 Hash and Encode a Password String
 Write an HTTP server that listens on a given port. Your server should be able to process multiple connections simultaneously. And provide the following endpoints:
 
