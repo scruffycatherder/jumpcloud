@@ -21,6 +21,10 @@ func (hashCache *HashCache) Put(key uint64, hash string) {
 	hashCache.Unlock()
 }
 
+// TODO(bobl): There seems to be some inconsistency in the way err or ok
+// are returned in tuples from function calls (e.g. map lookups vs. i/o reads
+// and writes.  Investigate what the generally accepted standard is, and use it.
+
 func (hashCache *HashCache) Get(key uint64) (hash string, ok bool) {
 	hashCache.RLock()
 	hash, ok = hashCache.cache[key]
