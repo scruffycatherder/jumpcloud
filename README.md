@@ -10,7 +10,7 @@ git clone https://github.com/scruffycatherder/jumpcloud
 Build and start the server:
 ```
 go build
-./jumpcloud --port=\<port>
+./jumpcloud --port=<port>
 ```
 
 Request a new hashed password:
